@@ -1,0 +1,19 @@
+{
+  "id": "./",
+  "name": "SALDO Pocket – Spese rapide",
+  "short_name": "SALDO Pocket",
+  "description": "Margine libero, spese veloci e lista serale. Solo sul dispositivo.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f7f8",
+  "theme_color": "#f5f7f8",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
