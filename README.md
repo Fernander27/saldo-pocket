@@ -1,9 +1,21 @@
-# SALDO Pocket
+# SALDO Pocket 2.0
 
-Mini-app gratuita per iPhone. Annota le spese e visualizza quanto rimane del **Margine libero** inserito manualmente da SALDO sul computer.
+PWA per iPhone: PIN di 6 cifre all'avvio, archivio cifrato in locale (WebCrypto AES-256-GCM, PBKDF2), registrazione di spese CONTO/TEST, margini separati aggiornati manualmente da Windows, spese rapide, modifica/annullamento, storico e backup cifrato.
 
-Apri il sito con Safari e scegli **Condividi → Aggiungi alla schermata Home**. La mini-app funziona anche offline dopo il primo caricamento completo. Per riavviare il conteggio, riporta prima tutte le spese in SALDO Windows, poi scegli **Aggiorna dal PC** e inserisci il Margine libero aggiornato.
+## Prima apertura e migrazione
 
-**Privacy:** il repository contiene solo codice e icone. Importi e note vengono salvati nella memoria locale del browser dell'iPhone (localStorage), non sono inviati a server da questa app, non vengono sincronizzati e **non sono cifrati dall'applicazione**. Usa note generiche e non affidarti a questa mini-app come archivio definitivo. Se cancelli la memoria di Safari puoi perdere le spese non ancora trascritte.
+Al primo avvio della 2.0 crea e conferma un PIN. Le spese già presenti nel vecchio archivio locale vengono migrate e cifrate; il vecchio archivio viene rimosso solo dopo il salvataggio cifrato. Non disinstallare o cancellare i dati Safari prima di aver creato un backup.
 
-Nessun backend, pubblicità, tracciamento o servizio bancario.
+## Esportazione su Windows
+
+**Esporta per Windows** genera un JSON con movimenti da riportare sul PC, con ID stabili per un'importazione futura senza duplicati. Fino a quando SALDO Windows non dispone di un importatore del formato `saldo-pocket-transfer-v1`, è necessario registrare le spese manualmente con **Copia elenco**. Il file JSON contiene importi e note NON cifrati: non condividerlo.
+
+## Margini
+
+I margini dei due conti sono copiati manualmente da SALDO Windows e Pocket sottrae solo le spese annotate e ancora da trasferire. Non è una sincronizzazione bancaria o finanziaria in tempo reale. Pocket avvisa quando il dato è vecchio.
+
+## Privacy e recupero
+
+La memoria locale è cifrata e resta sul dispositivo. Il PIN di 6 cifre non offre la stessa resistenza di una password lunga a un attacco offline: proteggi il dispositivo e i backup. Per recuperare dati cifrati dopo aver dimenticato il PIN serve un backup di cui conosci il PIN; non esiste un bypass. **Salva regolarmente un backup cifrato** fuori da Safari, perché svuotarne la memoria cancella l'archivio.
+
+Non c'è pubblicità, sincronizzazione, connessione bancaria né invio di dati finanziari a server.
